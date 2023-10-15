@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: news-article
+  jpa:
+    show-sql: true
+    database: H2
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: ${DB_CONNECTION_STRING:jdbc:h2:~/data/news_article;AUTO_SERVER=TRUE}
+    driver-class-name: org.h2.Driver
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
+  liquibase:
+    change-log: classpath:/liquibase/db-changelog.xml
+    drop-first: true
