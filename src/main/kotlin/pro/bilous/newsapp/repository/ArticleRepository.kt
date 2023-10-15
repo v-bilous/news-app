@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query
 import pro.bilous.newsapp.domain.Article
 import java.time.LocalDateTime
 
-interface ArticleRepository :  JpaRepository<Article, Long> {
+interface ArticleRepository : JpaRepository<Article, Long> {
 
     fun findAllByPublishDateBetween(start: LocalDateTime, end: LocalDateTime): List<Article>
 
