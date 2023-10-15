@@ -19,6 +19,7 @@ Kotlin, Gradle, SpringBoot, Liquibase, H2, JUnit, OpenAPI
 ### Trade-offs explained
 - The article entity is implemented using a single domain `Article` to simplify the code. However, in a real application, it may not be sufficient as different use cases may require the use of DTOs.
 - The `keywords` and `authors` are implemented as arrays in the current implementation. However, in reality, complex objects with their own APIs may be needed.
+- The text of an `Article` would typically be a reference to a separate entity/object in the real app. However, in this example, it is simply `text` type.
 - Auditing properties such as `createdBy, updatedBy, createdAt, updatedAt` have not been implemented, which are essential in real applications.
 - The security layer, such as Spring Security, is not included in this example.
 - The list endpoints have been simplified using the `/articles/by**` URL template. However, in a real application, this may not be considered a good practice as it could be seen as RESTful bad practices. Implementing search with pagination using a URL like `/articles?search={searchLine}&page=0&size=20` may be preferred.
